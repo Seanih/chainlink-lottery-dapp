@@ -7,10 +7,11 @@
 const { ethers } = require('hardhat');
 
 async function main() {
-	const contract = await ethers.getContractFactory('Lottery');
-	const lotteryContract = await contract.deploy();
-	await lotteryContract.deployed();
-  
+	const contract = await ethers.getContractFactory('RandomNumber');
+	const randomNumberContract = await contract.deploy();
+	await randomNumberContract.deployed();
+
+	console.log(`contract deployed to: ${randomNumberContract.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
